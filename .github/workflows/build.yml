@@ -96,8 +96,13 @@ jobs:
 
   package-macos:
     runs-on: macos-latest
+    strategy:
+      matrix:
+        arch:
+          - x86_64
+          - arm64
     env:
-      ARCH: x86_64
+      ARCH: ${{ matrix.arch }}
       OS: macos
     steps:
     - uses: actions/checkout@v1
