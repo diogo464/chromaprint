@@ -33,7 +33,7 @@ case $OS-$ARCH in
 esac
 
 curl -s -L "https://github.com/acoustid/ffmpeg-build/releases/download/$FFMPEG_BUILD_VERSION/ffmpeg-$FFMPEG_VERSION-audio-$TARGET.tar.gz" | tar xz
-export FFMPEG_DIR=$TMP_BUILD_DIR/$(ls -d ffmpeg-* | tail)
+export FFMPEG_DIR=$TMP_BUILD_DIR/$(ls -d ffmpeg-*/ffmpeg-* | tail)
 
 find $FFMPEG_DIR
 
